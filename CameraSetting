@@ -1,0 +1,10 @@
+import time
+import picamera
+counter = 0
+with picamera.PiCamera() as camera:
+    for each in range(5):
+        counter = counter + 1
+        camera.start_preview()
+        time.sleep(5)
+        camera.capture("/home/pi/python/Pictures/image" + str(counter) +".jpg")
+        camera.stop_preview()
